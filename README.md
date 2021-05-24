@@ -1,3 +1,5 @@
+#Readme
+
 This project can be used to create Random forest models to build submissions for the well-known titanic project on kaggle (https://www.kaggle.com/c/titanic).
 
 The following functionalities are covered:
@@ -8,7 +10,7 @@ The following functionalities are covered:
 
 - **main.py:** trains RF model with default parameters and creates predictions on test set. Accuracy: 0.78708. Features used include mostly the columns contained in the raw input dataset (see https://www.kaggle.com/c/titanic/data for detailed description of the meaning of the column names).
 	- Numerical columns: 'Pclass', 'Age', 'SibSp', 'Parch', 'Far'. All missing values are replaced by Median values of training set.
-	- Categorical columns: 'Sex', 'Embarked', 'title', 'Cabin'. All are one-hot encoded. 'title' is a feature extracted from the 'name' field (e.g. Dr., Mrs., Mr.). Only the first letter of the original 'Cabin' column is used. 'has_nickname' is a boolean (1 if person has indicated a nickname, else 0). 'title' is the title contained in the name field (e.g. Dr., Mrs., Mr. etc.). The column 'cabin' is modified by extracting only the first letter. 
+	- Categorical columns: 'Sex', 'Embarked', 'title', 'Cabin', 'has_nickname'. All are one-hot encoded. Missing values are replaced by mode of training set. 'title' is a feature extracted from the 'name' field (e.g. Dr., Mrs., Mr.). Only the first letter of the original 'Cabin' column is used. 'has_nickname' is a boolean (1 if person has indicated a nickname, else 0). 
 
 - **prediction_test_script.py:** demonstrates how to invoke main.py with custom Random forest hyperparameter and how to perform grid search on the RF hyperparameters.
 

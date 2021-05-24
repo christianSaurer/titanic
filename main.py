@@ -17,7 +17,7 @@ def main(model_type, filename, grid=None, hyper_parameters=None):
 
     train_df = pd.read_csv(input_data_folder + 'train.csv')
     test_df = pd.read_csv(input_data_folder + 'test.csv')
-    cat_variables = ['Sex', 'Embarked', 'title', 'Cabin']
+    cat_variables = ['Sex', 'Embarked', 'title', 'Cabin', 'has_nickname']
     num_variables = ['Pclass','Age','SibSp','Parch','Fare']
     target_variable = 'Survived'
     index_variable = 'PassengerId'
