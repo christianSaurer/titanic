@@ -1,18 +1,16 @@
 import pandas as pd
-#import matplotlib.pyplot as plt
 import os
-import scipy
 import ppscore as pps
 import seaborn as sns
 from nameparser import HumanName
 
-data_folder = os.getcwd() + '/data/'
+data_folder = os.getcwd() + '/data/input/'
 
 train_df = pd.read_csv(data_folder + 'train.csv')
 
 train_df.describe()
-#matrix_df = pps.matrix(train_df[['Survived','Pclass','Sex','SibSp','Parch','Age','Fare','Embarked','Ticket','Cabin']])[['x', 'y', 'ppscore']].pivot(columns='x', index='y', values='ppscore')
-#sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
+matrix_df = pps.matrix(train_df[['Survived','Pclass','Sex','SibSp','Parch','Age','Fare','Embarked','Ticket','Cabin']])[['x', 'y', 'ppscore']].pivot(columns='x', index='y', values='ppscore')
+sns.heatmap(matrix_df, vmin=0, vmax=1, cmap="Blues", linewidths=0.5, annot=True)
 print()
 #only fare, sex and ticket are good uni-predictors
 #can anything useful be extracted from name?
